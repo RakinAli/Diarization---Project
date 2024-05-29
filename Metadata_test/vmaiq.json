@@ -1,0 +1,1 @@
+{"audio_filepath": "../Dataset/Audio/Dev\\vmaiq.wav", "offset": 0, "duration": null, "label": "infer", "text": "-", "num_speakers": null, "rttm_filepath": "../Dataset/RTTMs/Dev\\vmaiq.rttm", "uem_filepath": null}
