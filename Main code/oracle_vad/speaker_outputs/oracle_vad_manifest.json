@@ -1,2 +1,28 @@
-{"audio_filepath": "c:\\Users\\rakin\\Documents\\GitHub\\Speaker-Diarization\\Main code\\data/an4_diarize_test.wav", "offset": 0.29898, "duration": 2.47133, "label": "UNK", "uniq_id": "an4_diarize_test"}
-{"audio_filepath": "c:\\Users\\rakin\\Documents\\GitHub\\Speaker-Diarization\\Main code\\data/an4_diarize_test.wav", "offset": 3.1639, "duration": 1.98311, "label": "UNK", "uniq_id": "an4_diarize_test"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 5.28, "duration": 29.24, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 34.68, "duration": 5.4, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 40.12, "duration": 0.84, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 41.12, "duration": 39.36, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 80.92, "duration": 2.8, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 84.84, "duration": 1.24001, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 87.08, "duration": 0.92, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 88.72, "duration": 4.32, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 93.08, "duration": 1.28, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 95.12, "duration": 2.88, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 98.72, "duration": 1.72, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 101.12, "duration": 3.48, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 105.56, "duration": 1.52, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 107.16, "duration": 0.43999, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 108.16, "duration": 1.88, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 111.0, "duration": 2.28, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 113.84, "duration": 4.28001, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 119.44, "duration": 2.88, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 122.96, "duration": 1.6, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 125.2, "duration": 3.2, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 128.48, "duration": 1.16, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 130.88, "duration": 2.64, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 133.67999, "duration": 0.44, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 135.72, "duration": 2.44, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 138.92, "duration": 1.56, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 140.64, "duration": 1.0, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 142.2, "duration": 2.12001, "label": "UNK", "uniq_id": "afjiv"}
+{"audio_filepath": "../Dataset/Audio/Dev\\afjiv.wav", "offset": 144.60001, "duration": 0.72, "label": "UNK", "uniq_id": "afjiv"}
