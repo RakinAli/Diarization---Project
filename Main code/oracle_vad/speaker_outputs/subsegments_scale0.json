@@ -1,0 +1,5 @@
+{"audio_filepath": "c:\\Users\\rakin\\Documents\\GitHub\\Speaker-Diarization\\Main code\\data/an4_diarize_test.wav", "offset": 0.29898, "duration": 1.5, "label": "UNK", "uniq_id": null}
+{"audio_filepath": "c:\\Users\\rakin\\Documents\\GitHub\\Speaker-Diarization\\Main code\\data/an4_diarize_test.wav", "offset": 1.04898, "duration": 1.5000000000000002, "label": "UNK", "uniq_id": null}
+{"audio_filepath": "c:\\Users\\rakin\\Documents\\GitHub\\Speaker-Diarization\\Main code\\data/an4_diarize_test.wav", "offset": 1.79898, "duration": 0.9713300000000002, "label": "UNK", "uniq_id": null}
+{"audio_filepath": "c:\\Users\\rakin\\Documents\\GitHub\\Speaker-Diarization\\Main code\\data/an4_diarize_test.wav", "offset": 3.1639, "duration": 1.5, "label": "UNK", "uniq_id": null}
+{"audio_filepath": "c:\\Users\\rakin\\Documents\\GitHub\\Speaker-Diarization\\Main code\\data/an4_diarize_test.wav", "offset": 3.9139, "duration": 1.23311, "label": "UNK", "uniq_id": null}
