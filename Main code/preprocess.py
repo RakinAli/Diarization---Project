@@ -1,4 +1,6 @@
-"""Wav2Mel for processing audio data. This type of pre-processing seems to be standard practive
+"""Wav2Mel for processing audio data. This type of pre-processing seems to be standard practive. The code is taken from the following source:
+
+- https://github.com/yistLin/dvector/blob/master/data/wav2mel.py
 
 """
 
