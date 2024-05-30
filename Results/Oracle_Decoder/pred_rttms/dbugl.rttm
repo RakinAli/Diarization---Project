@@ -1,8 +1,8 @@
 SPEAKER dbugl 1   0.360   15.720 <NA> <NA> speaker_0 <NA> <NA>
-SPEAKER dbugl 1   17.360   1.300 <NA> <NA> speaker_2 <NA> <NA>
-SPEAKER dbugl 1   18.660   2.100 <NA> <NA> speaker_0 <NA> <NA>
-SPEAKER dbugl 1   20.760   0.400 <NA> <NA> speaker_2 <NA> <NA>
-SPEAKER dbugl 1   21.160   0.400 <NA> <NA> speaker_1 <NA> <NA>
+SPEAKER dbugl 1   17.360   1.400 <NA> <NA> speaker_2 <NA> <NA>
+SPEAKER dbugl 1   18.760   2.000 <NA> <NA> speaker_0 <NA> <NA>
+SPEAKER dbugl 1   20.760   0.300 <NA> <NA> speaker_2 <NA> <NA>
+SPEAKER dbugl 1   21.060   0.500 <NA> <NA> speaker_1 <NA> <NA>
 SPEAKER dbugl 1   21.560   3.000 <NA> <NA> speaker_0 <NA> <NA>
 SPEAKER dbugl 1   24.560   0.600 <NA> <NA> speaker_1 <NA> <NA>
 SPEAKER dbugl 1   25.160   1.700 <NA> <NA> speaker_0 <NA> <NA>
@@ -49,9 +49,9 @@ SPEAKER dbugl 1   274.900   0.300 <NA> <NA> speaker_0 <NA> <NA>
 SPEAKER dbugl 1   275.200   1.200 <NA> <NA> speaker_3 <NA> <NA>
 SPEAKER dbugl 1   276.400   1.500 <NA> <NA> speaker_1 <NA> <NA>
 SPEAKER dbugl 1   277.900   1.400 <NA> <NA> speaker_2 <NA> <NA>
-SPEAKER dbugl 1   279.300   0.200 <NA> <NA> speaker_1 <NA> <NA>
-SPEAKER dbugl 1   279.500   2.200 <NA> <NA> speaker_0 <NA> <NA>
-SPEAKER dbugl 1   281.700   0.100 <NA> <NA> speaker_1 <NA> <NA>
+SPEAKER dbugl 1   279.300   0.300 <NA> <NA> speaker_1 <NA> <NA>
+SPEAKER dbugl 1   279.600   2.000 <NA> <NA> speaker_0 <NA> <NA>
+SPEAKER dbugl 1   281.600   0.200 <NA> <NA> speaker_1 <NA> <NA>
 SPEAKER dbugl 1   281.800   0.900 <NA> <NA> speaker_2 <NA> <NA>
 SPEAKER dbugl 1   282.700   1.000 <NA> <NA> speaker_0 <NA> <NA>
 SPEAKER dbugl 1   283.700   0.700 <NA> <NA> speaker_1 <NA> <NA>
