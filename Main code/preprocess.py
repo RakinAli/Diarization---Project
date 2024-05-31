@@ -43,7 +43,7 @@ class Wav2Mel(nn.Module):
     def forward(self, wav_tensor: torch.Tensor, sample_rate: int) -> torch.Tensor:
         wav_tensor = self.sox_effects(wav_tensor, sample_rate)
         mel_tensor = self.log_melspectrogram(wav_tensor)
-        return mel_tensor
+        return mel_tensor, mel_tensor
 
 
 class SoxEffects(nn.Module):
