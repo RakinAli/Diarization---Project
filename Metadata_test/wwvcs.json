@@ -1,0 +1,1 @@
+{"audio_filepath": "../Dataset/Audio/Test\\wwvcs.wav", "offset": 0, "duration": null, "label": "infer", "text": "-", "num_speakers": null, "rttm_filepath": "../Dataset/RTTMs/Test\\wwvcs.rttm", "uem_filepath": null}
