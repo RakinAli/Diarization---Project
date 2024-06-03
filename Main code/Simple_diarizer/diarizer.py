@@ -12,6 +12,13 @@ from tqdm.autonotebook import tqdm
 from .cluster import cluster_AHC, cluster_SC
 from .utils import check_wav_16khz_mono, convert_wavfile
 
+# Suppresing warnings
+import warnings
+import warnings
+
+# Suppress warnings  
+warnings.filterwarnings("ignore")
+
 
 class Diarizer:
     def __init__(
@@ -27,6 +34,10 @@ class Diarizer:
             "sc",
         ], "Only ahc and sc in the supported clustering options"
 
+        self.run_opts = (
+            {"device": "cuda:0"} if torch.cuda.is_available() else {"device": "cpu"}
+        )
+
         if cluster_method == "ahc":
             self.cluster = cluster_AHC
         if cluster_method == "sc":
@@ -34,9 +45,6 @@ class Diarizer:
 
         self.vad_model, self.get_speech_ts = self.setup_VAD()
 
-        self.run_opts = (
-            {"device": "cuda:0"} if torch.cuda.is_available() else {"device": "cpu"}
-        )
         if embed_model == "xvec":
             self.embed_model = EncoderClassifier.from_hparams(
                 source="speechbrain/spkrec-xvect-voxceleb",
@@ -54,11 +62,10 @@ class Diarizer:
         self.period = period
 
     def setup_VAD(self):
-        model, utils = torch.hub.load(
-            repo_or_dir="snakers4/silero-vad", model="silero_vad"
-        )
-        # force_reload=True)
-
+        model, utils = torch.hub.load(repo_or_dir="snakers4/silero-vad", model="silero_vad")
+        model.to(
+            self.run_opts["device"]
+        )  # Ensure the model is moved to the appropriate device
         get_speech_ts = utils[0]
         return model, get_speech_ts
 
@@ -66,7 +73,9 @@ class Diarizer:
         """
         Runs the VAD model on the signal
         """
+        signal = signal.to(self.run_opts["device"])  # Move signal to the appropriate device
         return self.get_speech_ts(signal, self.vad_model)
+
 
     def windowed_embeds(self, signal, fs, window=1.5, period=0.75):
         """
@@ -93,7 +102,9 @@ class Diarizer:
 
         with torch.no_grad():
             for i, j in segments:
-                signal_seg = signal[:, i:j].to(self.run_opts["device"])
+                signal_seg = signal[:, i:j].to(
+                    self.run_opts["device"]
+                )  # Ensure tensor is moved to the device
                 seg_embed = self.embed_model.encode_batch(signal_seg)
                 embeds.append(seg_embed.squeeze(0).squeeze(0).cpu().numpy())
 
@@ -106,6 +117,9 @@ class Diarizer:
 
         returns: embeddings, segment info
         """
+        signal = signal.to(
+            self.run_opts["device"]
+        )  # Move the signal to the appropriate device
         all_embeds = []
         all_segments = []
 
@@ -180,8 +194,8 @@ class Diarizer:
     def diarize(
         self,
         wav_file,
-        num_speakers=2,
-        threshold=None,
+        num_speakers=None,
+        threshold=1e-1,
         silence_tolerance=0.2,
         enhance_sim=True,
         extra_info=False,
