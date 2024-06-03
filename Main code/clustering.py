@@ -47,19 +47,31 @@ def run_all_untrained():
     for name, diarizer in diarizers.items():
         for audio_file in tqdm(os.listdir(AUDIO_TEST_PATH)):
             if audio_file.endswith(".wav"):
-                # Create all the paths 
+                # Create all the paths
                 audio_file_name = audio_file.split(".")[0]
                 rttm_out = os.path.join(RTTM_OUT_PATH, name, audio_file_name + ".rttm")
                 audio_path = os.path.join(AUDIO_TEST_PATH, audio_file)
 
-                # Diarize the audio file from the path and store it in the RTTM path 
+                # Check if the RTTM file already exists
+                if os.path.exists(rttm_out):
+                    print(f"Skipping {audio_file} as it has already been processed.")
+                    continue
+
+                # Diarize the audio file from the path and store it in the RTTM path
                 segments = diarizer.diarize(audio_path, outfile=rttm_out)
                 signal, fs = sf.read(audio_path)
 
                 # Save the image to the path
                 output_image_path = os.path.join(IMAGE_OUT_PATH, name, audio_file_name)
 
-                combined_waveplot(signal, fs, segments, output_path=output_image_path)
+                # Do a try-catch to avoid errors
+                try:
+                    combined_waveplot(
+                        signal, fs, segments, output_path=output_image_path
+                    )
+                except Exception as e:
+                    print(f"Error in file {audio_file}: {e}")
+                    continue
 
 
 """
