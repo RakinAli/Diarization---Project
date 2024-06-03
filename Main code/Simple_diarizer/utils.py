@@ -98,7 +98,9 @@ def waveplot(signal, fs, start_idx=0, figsize=(5, 3), color="tab:blue"):
     return plt.gcf()
 
 
-def combined_waveplot(signal, fs, segments, figsize=(10, 3), tick_interval=60):
+def combined_waveplot(
+    signal, fs, segments, figsize=(10, 3), tick_interval=60, output_path=None
+):
     """
     The full diarized waveform plot, with each speech segment coloured according to speaker
 
@@ -109,6 +111,7 @@ def combined_waveplot(signal, fs, segments, figsize=(10, 3), tick_interval=60):
             - segments (list):  The diarization outputs (segment information)
             - figsize (tuple): Figsize passed into plt.figure()
             - tick_interval (float): Where to place ticks for xlabel
+            - output_path (str or None): Path to save the plot image. If None, the plot is not saved.
 
         Outputs:
             - The matplotlib figure
@@ -143,6 +146,11 @@ def combined_waveplot(signal, fs, segments, figsize=(10, 3), tick_interval=60):
     plt.ylim([-max_amp, max_amp])
 
     plt.tight_layout()
+
+    if output_path is not None:
+        plt.savefig(output_path)
+        return
+
     return plt.gcf()
 
 

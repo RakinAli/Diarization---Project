@@ -37,8 +37,6 @@ class Diarizer:
         self.run_opts = (
             {"device": "cuda:0"} if torch.cuda.is_available() else {"device": "cpu"}
         )
-        print("Using device: {}".format(self.run_opts["device"]))
-
         if embed_model == "xvec":
             self.embed_model = EncoderClassifier.from_hparams(
                 source="speechbrain/spkrec-xvect-voxceleb",
@@ -95,7 +93,7 @@ class Diarizer:
 
         with torch.no_grad():
             for i, j in segments:
-                signal_seg = signal[:, i:j]
+                signal_seg = signal[:, i:j].to(self.run_opts["device"])
                 seg_embed = self.embed_model.encode_batch(signal_seg)
                 embeds.append(seg_embed.squeeze(0).squeeze(0).cpu().numpy())
 
@@ -111,7 +109,7 @@ class Diarizer:
         all_embeds = []
         all_segments = []
 
-        for utt in tqdm(speech_ts, desc="Utterances", position=0):
+        for utt in speech_ts:
             start = utt["start"]
             end = utt["end"]
 
@@ -237,7 +235,6 @@ class Diarizer:
         if check_wav_16khz_mono(wav_file):
             signal, fs = torchaudio.load(wav_file)
         else:
-            print("Converting audio file to single channel WAV using ffmpeg...")
             converted_wavfile = os.path.join(
                 os.path.dirname(wav_file), "{}_converted.wav".format(recname)
             )
@@ -247,15 +244,11 @@ class Diarizer:
             ), "Couldn't find converted wav file, failed for some reason"
             signal, fs = torchaudio.load(converted_wavfile)
 
-        print("Running VAD...")
         speech_ts = self.vad(signal[0])
-        print("Splitting by silence found {} utterances".format(len(speech_ts)))
         assert len(speech_ts) >= 1, "Couldn't find any speech during VAD"
 
-        print("Extracting embeddings...")
         embeds, segments = self.recording_embeds(signal, fs, speech_ts)
 
-        print("Clustering to {} speakers...".format(num_speakers))
         cluster_labels = self.cluster(
             embeds,
             n_clusters=num_speakers,
@@ -263,13 +256,11 @@ class Diarizer:
             enhance_sim=enhance_sim,
         )
 
-        print("Cleaning up output...")
         cleaned_segments = self.join_segments(cluster_labels, segments)
         cleaned_segments = self.make_output_seconds(cleaned_segments, fs)
         cleaned_segments = self.join_samespeaker_segments(
             cleaned_segments, silence_tolerance=silence_tolerance
         )
-        print("Done!")
         if outfile:
             self.rttm_output(cleaned_segments, recname, outfile=outfile)
 
