@@ -2,3 +2,8 @@
 /Dataset
 
 auths.env
+
+# Ignore metadata
+/.metadata
+/Metadata_test
+

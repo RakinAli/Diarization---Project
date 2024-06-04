@@ -1,5 +1,9 @@
 # I would have needed to add the code to system path to import it. Just use a Python package instead.
 
+"""
+This code generates RTTM files for all the audio files in the test folder with all the models in the custom pipeline
+
+"""
 # Custom package
 from Simple_diarizer.utils import combined_waveplot, waveplot
 from Simple_diarizer.diarizer import Diarizer
@@ -64,7 +68,7 @@ def run_all_untrained():
                 # Save the image to the path
                 output_image_path = os.path.join(IMAGE_OUT_PATH, name, audio_file_name)
 
-                # Do a try-catch to avoid errors
+                # Do a try-catch to avoid errors --
                 try:
                     combined_waveplot(
                         signal, fs, segments, output_path=output_image_path
