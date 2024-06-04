@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import sys
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 
 
 XVEC_SC = "../Results/Custom pipeline/xvec_sc"
@@ -16,7 +17,7 @@ ECAPA_AHC = "../Results/Custom pipeline/ecapa_ahc"
 def main():
     # Go through the RTTM files and read one file at a time
     for path in [XVEC_SC, XVEC_AHC, ECAPA_SC, ECAPA_AHC]:
-        for file in os.listdir(path):
+        for file in tqdm(os.listdir(path)):
             if file.endswith(".rttm"):
                 # Read the file, specifying the <NA> values
                 df = pd.read_csv(
@@ -42,9 +43,6 @@ def main():
                     quoting=False,
                 )
 
-                print(f"Modified file: {file}")
-
-                sys.exit()
 
 
 if __name__ == "__main__":
