@@ -17,8 +17,10 @@ def main():
     # Go through the RTTM files and read one file at a time
     for file in os.listdir(XVEC_SC):
         if file.endswith(".rttm"):
-            # Read the file
-            df = pd.read_csv(os.path.join(XVEC_SC, file), sep=" ", header=None)
+            # Read the file, specifying the <NA> values
+            df = pd.read_csv(
+                os.path.join(XVEC_SC, file), sep=" ", header=None, na_values=["<NA>"]
+            )
 
             # Modify column 2 and 7
             df[2] = 1  # Change column 2 to 1
@@ -26,12 +28,16 @@ def main():
             df[7] = "spk" + df[7].astype(str)
             df[7] = df[7].apply(lambda x: x if len(x) >= 5 else x[:3] + "0" + x[3:])
 
+            # Replace NaN with <NA>
+            df = df.fillna("<NA>")
+
             # Write the modified dataframe back to the file
             df.to_csv(
                 os.path.join(XVEC_SC, file),
                 sep=" ",
                 header=None,
                 index=False,
+                na_rep="<NA>",
                 quoting=False,
             )
 
